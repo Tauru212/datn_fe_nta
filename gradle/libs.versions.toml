@@ -1,0 +1,32 @@
+[versions]
+activity = "1.9.3"
+appcompat = "1.7.0"
+constraintlayout = "2.2.0"
+converterGson = "2.11.0"
+espressoCore = "3.6.1"
+firebaseBom = "33.7.0"
+glideVersion = "4.16.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+material = "1.12.0"
+photoview = "2.3.0"
+retrofit = "2.11.0"
+
+[libraries]
+androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+github-glide = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
+junit = { module = "junit:junit", version.ref = "junit" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+photoview = { module = "com.github.chrisbanes:PhotoView", version.ref = "photoview" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+
+[plugins]
+

@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:src="@drawable/baseline_keyboard_backspace_24" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSelfRented"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/bg_main"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardBack"
+        app:layout_constraintStart_toEndOf="@id/cardBack"
+        app:layout_constraintTop_toTopOf="@id/cardBack"
+        app:layout_constraintWidth_percent="0.36"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Xác nhận đã cho thuê"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSelfAdvertisement"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/bg_main"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardBack"
+        app:layout_constraintStart_toEndOf="@id/cardBack"
+        app:layout_constraintTop_toTopOf="@id/cardBack"
+        app:layout_constraintWidth_percent="0.3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Mở lại tin"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSelfRemovePost"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#EC7414"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardBack"
+        app:layout_constraintEnd_toStartOf="@id/cardFavorite"
+        app:layout_constraintTop_toTopOf="@id/cardBack"
+        app:layout_constraintWidth_percent="0.2"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Gỡ tin"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAdminApproved"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/bg_main"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardBack"
+        app:layout_constraintStart_toEndOf="@id/cardBack"
+        app:layout_constraintTop_toTopOf="@id/cardBack"
+        app:layout_constraintWidth_percent="0.3">
+
+        <TextView
+            android:id="@+id/tvActionApproved"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Duyệt đơn"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAdminHighlightMark"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#EC7414"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardBack"
+        app:layout_constraintStart_toEndOf="@id/cardBack"
+        app:layout_constraintTop_toTopOf="@id/cardBack"
+        app:layout_constraintWidth_percent="0.4">
+
+        <TextView
+            android:id="@+id/tvActionHighlightMark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Đẩy tin nổi bật"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAdminRemoveHighlightMark"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#EC143C"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardBack"
+        app:layout_constraintStart_toEndOf="@id/cardBack"
+        app:layout_constraintTop_toTopOf="@id/cardBack"
+        app:layout_constraintWidth_percent="0.46">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Gỡ khỏi tin nổi bật"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAdminRefuse"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@android:color/holo_red_dark"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardBack"
+        app:layout_constraintEnd_toStartOf="@id/cardFavorite"
+        app:layout_constraintTop_toTopOf="@id/cardBack"
+        app:layout_constraintWidth_percent="0.3">
+
+        <TextView
+            android:id="@+id/tvActionRefuse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Từ chối"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFavorite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:src="@drawable/baseline_favorite_border_24" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@id/viewPager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPager">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
+
+            <TextView
+                android:id="@+id/tvReStateType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Apartment"
+                android:textColor="@color/bg_main"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="60dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvReStateType"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvReStateType"
+                app:srcCompat="@drawable/baseline_star_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="4.5"
+                app:layout_constraintBottom_toBottomOf="@id/ivStar"
+                app:layout_constraintStart_toEndOf="@id/ivStar"
+                app:layout_constraintTop_toTopOf="@id/ivStar" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Woodland Apartments"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvReStateType" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/raleway_thin"
+                android:text="1012 Ocean avanue, New yourk, USA"
+                android:textColor="#060606"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <TextView
+                android:id="@+id/tvTitleDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Thông tin chi tiết"
+                android:textColor="@color/bg_main"
+                app:layout_constraintStart_toStartOf="@id/tvAddress"
+                app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bg_main"
+                app:layout_constraintEnd_toEndOf="@id/tvTitleDetail"
+                app:layout_constraintStart_toStartOf="@id/tvTitleDetail"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleDetail" />
+
+            <LinearLayout
+                android:id="@+id/layoutInfoOther"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view1"
+                tools:ignore="DisableBaselineAlignment">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:srcCompat="@drawable/icons_sofa"
+                        app:tint="@color/bg_main" />
+
+                    <TextView
+                        android:id="@+id/tvInterior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Full" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:srcCompat="@drawable/baseline_bed_24"
+                        app:tint="@color/bg_main" />
+
+                    <TextView
+                        android:id="@+id/tvBedrooms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="3 ngủ" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:srcCompat="@drawable/baseline_bathtub_24"
+                        app:tint="@color/bg_main" />
+
+                    <TextView
+                        android:id="@+id/tvBathrooms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="1 Vệ sinh" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Còn chung cư là những khu nhà có từ hai tầng trở lên, nhiều căn hộ, có lối, phần sở hữu, lối đi riêng và cầu thang, hệ thống hạ tầng sử dụng chung cho các gia đình, cá nhân, tổ chức"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutInfoOther" />
+
+            <LinearLayout
+                android:id="@+id/acreage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tvDescription"
+                app:layout_constraintStart_toStartOf="@id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Diện tích sử dụng:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAcreage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="72 m2"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/legalDocuments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tvDescription"
+                app:layout_constraintStart_toStartOf="@id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@id/acreage">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Giấy tờ pháp lý:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvLegalDocuments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Sổ đỏ chính chủ"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/direction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tvDescription"
+                app:layout_constraintStart_toStartOf="@id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@id/legalDocuments">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Hướng nhà:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Đông Nam"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvContactDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Thông tin liên hệ"
+                android:textColor="@color/bg_main"
+                app:layout_constraintStart_toStartOf="@id/tvAddress"
+                app:layout_constraintTop_toBottomOf="@id/direction" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bg_main"
+                app:layout_constraintEnd_toEndOf="@id/tvContactDetail"
+                app:layout_constraintStart_toStartOf="@id/tvContactDetail"
+                app:layout_constraintTop_toBottomOf="@id/tvContactDetail" />
+
+            <LinearLayout
+                android:id="@+id/contactName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tvDescription"
+                app:layout_constraintStart_toStartOf="@id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@id/view2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Tên người liên hệ:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvContactName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Le Kevil"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contactPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tvDescription"
+                app:layout_constraintStart_toStartOf="@id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@id/contactName">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="SĐT:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvContactPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="09xxxxxxx"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contactEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/tvDescription"
+                app:layout_constraintStart_toStartOf="@id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@id/contactPhone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Email:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvContactEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="lekevil@gmail.com"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv002"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Tổng tiền"
+        app:layout_constraintStart_toStartOf="@id/footer"
+        app:layout_constraintTop_toTopOf="@id/footer" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/raleway_bold"
+        android:text="4.500.000 đ/ tháng"
+        android:textColor="@color/bg_main"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toStartOf="@id/footer"
+        app:layout_constraintTop_toBottomOf="@id/tv002" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAction"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/bg_main"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/footer"
+        app:layout_constraintWidth_percent="0.4">
+
+        <TextView
+            android:id="@+id/tvAction"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Liên hệ"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1A343434"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:background="#000"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ProgressBar
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:indeterminateTint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Xin chờ chút"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

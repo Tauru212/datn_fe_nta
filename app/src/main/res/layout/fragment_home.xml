@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="Vị trí của bạn"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/raleway_bold"
+        android:includeFontPadding="false"
+        android:text="Hà Nội"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/baseline_location_pin_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/baseline_arrow_drop_down_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tvLocation"
+        app:layout_constraintStart_toEndOf="@id/tvLocation"
+        app:layout_constraintTop_toTopOf="@id/tvLocation" />
+
+    <View
+        android:id="@+id/viewSearch"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLocation" />
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@id/viewSearch"
+        app:layout_constraintStart_toStartOf="@id/viewSearch"
+        app:layout_constraintTop_toTopOf="@id/viewSearch" />
+
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="14dp"
+        android:background="@android:color/transparent"
+        android:hint="Tìm kiếm"
+        android:imeOptions="actionSearch"
+        android:importantForAutofill="no"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/viewSearch"
+        app:layout_constraintEnd_toEndOf="@id/viewSearch"
+        app:layout_constraintStart_toEndOf="@id/ivSearch"
+        app:layout_constraintTop_toTopOf="@id/viewSearch"
+        tools:ignore="TextFields" />
+
+    <LinearLayout
+        android:id="@+id/layoutFilter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewSearch">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/ivHouse"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_filter"
+                android:contentDescription="@null"
+                android:padding="15dp"
+                android:src="@drawable/icon_filter_house" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCloseFilterHouse"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/baseline_remove_circle_24"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/ivVilla"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_filter"
+                android:contentDescription="@null"
+                android:padding="15dp"
+                android:src="@drawable/ic_villa" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCloseFilterVilla"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/baseline_remove_circle_24"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/ivApartment"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_filter"
+                android:contentDescription="@null"
+                android:padding="15dp"
+                android:src="@drawable/icon_apartment" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCloseFilterApartment"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/baseline_remove_circle_24"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/ivBungalow"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_filter"
+                android:contentDescription="@null"
+                android:padding="15dp"
+                android:src="@drawable/icon_bungalow" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCloseFilterBungalow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/baseline_remove_circle_24"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutFilter">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutHotNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="Tin nổi bật"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="0dp"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginEnd="10dp"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:gravity="end"-->
+                    <!--                        android:text="Xem thêm"-->
+                    <!--                        android:textColor="@color/bg_main" />-->
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewHotNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_post_horizontal" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Chưa có bài đăng"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_post_vertical" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

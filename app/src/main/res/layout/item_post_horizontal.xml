@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="240dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardImg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintDimensionRatio="16:10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatar_demo" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvRented"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rented"
+            android:elevation="10dp"
+            android:fontFamily="@font/raleway_bold"
+            android:padding="10dp"
+            android:text="Đã cho thuê"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/cardImg"
+            app:layout_constraintTop_toTopOf="@id/cardImg" />
+
+        <ImageView
+            android:id="@+id/ivLiked"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_favorite"
+            android:contentDescription="@null"
+            android:elevation="10dp"
+            android:padding="4dp"
+            android:src="@drawable/baseline_favorite_border_24"
+            app:layout_constraintEnd_toEndOf="@id/cardImg"
+            app:layout_constraintTop_toTopOf="@id/cardImg" />
+
+        <TextView
+            android:id="@+id/tvReStateType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_re_state_type"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="Villa"
+            android:textColor="@color/bg_main"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/cardImg"
+            app:layout_constraintTop_toBottomOf="@id/cardImg" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/raleway_bold"
+            android:maxLines="2"
+            android:paddingVertical="4dp"
+            android:text="BlissView Villa"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cardImg"
+            app:layout_constraintTop_toBottomOf="@id/tvReStateType" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintStart_toStartOf="@id/cardImg"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:srcCompat="@drawable/baseline_location_pin_24" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivLocation"
+            app:layout_constraintTop_toTopOf="@id/ivLocation"
+            tools:text="Phường Cầu Giấy, TP Hà Nội" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/raleway_bold"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="2.300.000 VNĐ / tháng"
+            android:textColor="@color/bg_main"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cardImg"
+            app:layout_constraintTop_toBottomOf="@id/ivLocation" />
+
+        <TextView
+            android:id="@+id/tvStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            app:layout_constraintBottom_toBottomOf="@id/tvReStateType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvReStateType" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/baseline_star_24"
+            app:layout_constraintBottom_toBottomOf="@id/tvStar"
+            app:layout_constraintEnd_toStartOf="@id/tvStar"
+            app:layout_constraintTop_toTopOf="@id/tvStar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

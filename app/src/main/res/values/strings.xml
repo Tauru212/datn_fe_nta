@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Re-Estate</string>
+    <string name="login">Đăng nhập</string>
+    <string name="register">Đăng ký</string>
+
+    <string name="title_tutorial"><font fgcolor='#396AF4'>Khám phá</font> <font fgcolor='#000'>và tìm thấy\nngôi nhà</font> <font fgcolor='#396AF4'>mơ ước của bạn</font></string>
+    <string name="get_started">Trải nghiệm ngay</string>
+
+    <string name="app_to_search">Ứng dụng tìm kiếm và khám phá nơi ở phù hợp nhất cho bạn</string>
+    <string name="have_account">Bạn đã có tài khoản?</string>
+    <string name="no_account">Bạn chưa có tài khoản?</string>
+    <string name="hint_name">Nhập Tên đầy đủ</string>
+    <string name="hint_email">Nhập Email</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+    <string name="title_account_menu">Tài khoản</string>
+    <string name="title_chat_menu">Chat</string>
+    <string name="title_favorite_menu">Yêu thích</string>
+    <string name="title_explore_menu">Khám phá</string>
+    <string name="title_home_menu">Trang chủ</string>
+    <string name="regulations">Quy định</string>
+    <string name="utilities">Tiện ích</string>
+    <string name="manager">Quản lý</string>
+    <string name="help_center">Trung tâm trợ giúp</string>
+    <string name="your_profile">Hồ sơ của bạn</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="admin">Chuyển đến trang Admin</string>
+    <string name="privacy_policy">Chính sách bảo mật</string>
+    <string name="news_posted">Bài đã đăng</string>
+    <string name="orders">Đơn đặt hàng</string>
+    <string name="create_post">Bạn có nhà cần cho thuê / bán. Đăng tin ngay</string>
+    <string name="buy">Bán</string>
+    <string name="lease">Cho thuê</string>
+    <string name="nhu_cau">Nhu cầu</string>
+
+    <string-array name="type_bds">
+        <item>Căn nhà</item>
+        <item>Biệt thự</item>
+        <item>Chung cư</item>
+        <item>Homestay</item>
+    </string-array>
+
+    <string-array name="legal_documents">
+        <item> </item>
+        <item>Sổ chính chủ</item>
+        <item>Hợp đồng mua bán</item>
+        <item>Đang chờ sổ</item>
+    </string-array>
+
+    <string-array name="interior">
+        <item> </item>
+        <item>Đầy đủ</item>
+        <item>Cơ bản</item>
+        <item>Không có gì</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Nam</item>
+        <item>Nữ</item>
+        <item>Không tiết lộ</item>
+    </string-array>
+</resources>

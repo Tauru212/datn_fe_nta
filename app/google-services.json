@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "942989798746",
+    "firebase_url": "https://launcher-uxos-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "re-state-3c5da",
+    "storage_bucket": "re-state-3c5da.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942989798746:android:109090c4632f2587429763",
+        "android_client_info": {
+          "package_name": "edu.re.estate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-qNdQKoLrfIrYbvBQpCwYpNVbH670Hko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942989798746:android:109090c4632f2587429763",
+        "android_client_info": {
+          "package_name": "edu.re.estate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-qNdQKoLrfIrYbvBQpCwYpNVbH670Hko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_icon_menu_main">22dp</dimen>
+    <dimen name="margin_top_icon_menu_main">5dp</dimen>
+    <dimen name="margin_top_text_menu_main">8dp</dimen>
+    <dimen name="text_size_text_menu_main">11sp</dimen>
+</resources>

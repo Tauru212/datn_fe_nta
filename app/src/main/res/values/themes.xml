@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ReEstate" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Theme.ReEstate" parent="Base.Theme.ReEstate" />
+
+    <declare-styleable name="MenuMoreView">
+        <attr name="type" format="enum">
+            <enum name="help_center" value="0" />
+            <enum name="privacy_policy" value="1" />
+            <enum name="news_posted" value="2" />
+            <enum name="orders" value="3" />
+            <enum name="create_post" value="4" />
+            <enum name="profile" value="5" />
+            <enum name="logout" value="6" />
+            <enum name="admin" value="7" />
+        </attr>
+    </declare-styleable>
+</resources>
