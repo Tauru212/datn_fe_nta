@@ -150,11 +150,14 @@ public class ChatActivity extends AppCompatActivity {
                                     chatMessages.add(chatMessage);
                                 }
                             }
+                            if (chatMessages.isEmpty()) {
+                                return;
+                            }
                             // Sort messages by timeSendMessage
                             chatMessages.sort(Comparator.comparingLong(ChatMessage::getTimeSendMessage));
 
                             adapter.setChatMessages(chatMessages);
-                            binding.recyclerView.smoothScrollToPosition(chatMessages.size() - 1);
+                            binding.recyclerView.smoothScrollToPosition(chatMessages.size());
                         }
                     });
         }

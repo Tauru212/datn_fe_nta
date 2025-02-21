@@ -316,7 +316,11 @@ public class PostDetailActivity extends AppCompatActivity {
             });
         });
         binding.tvAction.setOnClickListener(v -> {
-            if (SessionManager.currentUser == null) return;
+            if (SessionManager.currentUser == null) {
+                Intent intent = new Intent(this, AuthActivity.class);
+                intent.putExtra("EXTRA_IS_FROM_MAIN", true);
+                startActivity(intent);
+            };
             if (post.getAccountId() == SessionManager.currentUser.getAccountId()) return;
             try {
                 binding.layoutLoading.setVisibility(View.VISIBLE);
