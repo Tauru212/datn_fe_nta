@@ -153,11 +153,16 @@ public class ChatActivity extends AppCompatActivity {
                             if (chatMessages.isEmpty()) {
                                 return;
                             }
-                            // Sort messages by timeSendMessage
-                            chatMessages.sort(Comparator.comparingLong(ChatMessage::getTimeSendMessage));
+                            try {
+                                // Sort messages by timeSendMessage
+                                chatMessages.sort(Comparator.comparingLong(ChatMessage::getTimeSendMessage));
 
-                            adapter.setChatMessages(chatMessages);
-                            binding.recyclerView.smoothScrollToPosition(chatMessages.size());
+                                adapter.setChatMessages(chatMessages);
+                                binding.recyclerView.smoothScrollToPosition(chatMessages.size());
+
+                            } catch (Exception e) {
+                                Log.e("GT45_x", "error " + e);
+                            }
                         }
                     });
         }

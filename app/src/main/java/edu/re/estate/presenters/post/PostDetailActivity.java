@@ -316,12 +316,16 @@ public class PostDetailActivity extends AppCompatActivity {
             });
         });
         binding.tvAction.setOnClickListener(v -> {
+            // 1: Chưa login -> mở màn hình đăng nhập
             if (SessionManager.currentUser == null) {
                 Intent intent = new Intent(this, AuthActivity.class);
                 intent.putExtra("EXTRA_IS_FROM_MAIN", true);
                 startActivity(intent);
             };
+            // 2: Nếu user đó mở bài đăng của chính mình -> Nhấn liên hệ không có gì xảy ra.
             if (post.getAccountId() == SessionManager.currentUser.getAccountId()) return;
+            // 3: Mở chat
+            // Kiểm tra xem đã tồn tại topic chat với thông tin uuid = [user_id đã login trên máy]_[post_id]_[account_id đăng bài]
             try {
                 binding.layoutLoading.setVisibility(View.VISIBLE);
                 String uuid = SessionManager.currentUser.getAccountId() + "_" + post.getPostId() + "_" + post.getAccountId();
@@ -330,6 +334,7 @@ public class PostDetailActivity extends AppCompatActivity {
                         .get()
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful() && task.getResult() != null && task.getResult().exists()) {
+                                //Trường hợp này đã tồn tại topic
                                 binding.layoutLoading.setVisibility(View.GONE);
                                 Topic topic = task.getResult().toObject(Topic.class);
                                 if (topic != null) {
@@ -337,10 +342,14 @@ public class PostDetailActivity extends AppCompatActivity {
                                     goToChat(topic);
                                 }
                             } else {
+                                // Trường hợp này là chưa tồn tại topic với uuid trên
+                                // 1: Lấy thông tin của người đăng tin
                                 AuthRepositoryImpl.getInstance().getInfoUser(post.getAccountId(), new ExCallback<User>() {
                                     @Override
                                     public void onResponse(User data) {
                                         if (data != null) {
+                                            //Lấy thông tin thành cong
+                                            //Tạo 1 topic chat mới
                                             HashMap<String, Object> maps = new HashMap<>();
 
                                             String topicId = UUID.randomUUID().toString().trim();
@@ -373,10 +382,12 @@ public class PostDetailActivity extends AppCompatActivity {
                                                     .document(uuid)
                                                     .set(maps)
                                                     .addOnCompleteListener(task1 -> {
+                                                        //Tạo thành công mở màn hình chat
                                                         binding.layoutLoading.setVisibility(View.GONE);
                                                         goToChat(topic);
                                                     })
                                                     .addOnFailureListener(e -> {
+                                                        //Tạo không thành công
                                                         binding.layoutLoading.setVisibility(View.GONE);
                                                         Toast.makeText(PostDetailActivity.this, "Có lỗi xảy ra!", Toast.LENGTH_SHORT).show();
                                                     });

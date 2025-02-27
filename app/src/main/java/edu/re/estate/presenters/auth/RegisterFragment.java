@@ -149,7 +149,7 @@ public class RegisterFragment extends Fragment {
             if (getActivity() != null && getActivity() instanceof AuthActivity) {
                 ((AuthActivity) getActivity()).showLoading();
             }
-
+            // register
             RetrofitBuilder.authService.register(new RegisterRequest(name, email, password, "user")).enqueue(new Callback<BaseResult<Token>>() {
                 @Override
                 public void onResponse(@NonNull Call<BaseResult<Token>> call, @NonNull Response<BaseResult<Token>> response) {
